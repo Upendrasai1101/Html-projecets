@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lisper — Share Your Secrets</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="page-home">
+
+  <div class="grain"></div>
+
+  <nav class="nav">
+    <a href="/" class="logo">🤫 lisper</a>
+    <% if (user) { %>
+      <a href="/secrets" class="nav-link">My Secrets</a>
+      <a href="/logout" class="nav-link">Logout</a>
+    <% } else { %>
+      <a href="/login" class="nav-link">Login</a>
+      <a href="/register" class="btn-nav">Join Free</a>
+    <% } %>
+  </nav>
+
+  <main class="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <span class="eyebrow">Anonymous. Safe. Real.</span>
+      <h1 class="hero-title">
+        Every secret deserves<br/>
+        <em>a place to breathe.</em>
+      </h1>
+      <p class="hero-sub">
+        Whisper your truths into the void. Discover what others dare not say out loud.
+        No names. No judgements. Just raw human honesty.
+      </p>
+
+      <div class="hero-cta">
+        <% if (user) { %>
+          <a href="/secrets" class="btn-primary">Read Secrets</a>
+        <% } else { %>
+          <a href="/register" class="btn-primary">Start Whispering</a>
+          <a href="/login" class="btn-ghost">Already a ghost? Sign in</a>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="floating-cards">
+      <div class="fcard fcard-1">
+        <p>"I've never told anyone I cry every Sunday night."</p>
+        <span>— anonymous</span>
+      </div>
+      <div class="fcard fcard-2">
+        <p>"I still haven't forgiven them, but I pretend I have."</p>
+        <span>— anonymous</span>
+      </div>
+      <div class="fcard fcard-3">
+        <p>"I'm happier now than I've ever let myself admit."</p>
+        <span>— anonymous</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 Lisper · Your secrets are safe here.</p>
+  </footer>
+
+</body>
+</html>

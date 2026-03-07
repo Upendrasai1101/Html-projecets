@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register — Lisper</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="page-auth">
+
+  <div class="grain"></div>
+
+  <nav class="nav">
+    <a href="/" class="logo">🤫 lisper</a>
+    <a href="/login" class="nav-link">Already have an account?</a>
+  </nav>
+
+  <main class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2>Create your ghost identity</h2>
+        <p>No real name needed. Just an email and a password.</p>
+      </div>
+
+      <% if (error) { %>
+        <div class="alert-error"><span>⚠</span> <%= error %></div>
+      <% } %>
+
+      <form action="/register" method="POST" class="auth-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required />
+          <span class="form-hint">Min. 6 characters recommended</span>
+        </div>
+        <button type="submit" class="btn-primary btn-full">Create Account</button>
+      </form>
+
+      <p class="auth-switch">Already whispering? <a href="/login">Sign in</a></p>
+    </div>
+
+    <div class="auth-visual">
+      <div class="av-quote">
+        <blockquote>"We keep secrets because we want to be known, yet fear being judged."</blockquote>
+      </div>
+      <div class="av-orbs">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="orb orb-c"></div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

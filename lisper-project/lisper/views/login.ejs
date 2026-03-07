@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — Lisper</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="page-auth">
+
+  <div class="grain"></div>
+
+  <nav class="nav">
+    <a href="/" class="logo">🤫 lisper</a>
+    <a href="/register" class="btn-nav">Create Account</a>
+  </nav>
+
+  <main class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2>Welcome back, ghost</h2>
+        <p>Your secrets are waiting for you.</p>
+      </div>
+
+      <% if (error) { %>
+        <div class="alert-error"><span>⚠</span> <%= error %></div>
+      <% } %>
+
+      <form action="/login" method="POST" class="auth-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="btn-primary btn-full">Sign In</button>
+      </form>
+
+      <p class="auth-switch">New here? <a href="/register">Create an account</a></p>
+    </div>
+
+    <div class="auth-visual">
+      <div class="av-quote">
+        <blockquote>"The best secrets are the ones that change everything once spoken."</blockquote>
+      </div>
+      <div class="av-orbs">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="orb orb-c"></div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
