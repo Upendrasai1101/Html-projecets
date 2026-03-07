@@ -1,0 +1,73 @@
+<%- include('partials/header') %>
+
+<main class="main">
+
+  <!-- Decorative Background Lines -->
+  <div class="bg-lines">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-tag">🎸 Name Generator</div>
+    <h1 class="hero-title">
+      Your Band<br/>
+      <span class="hero-title-accent">Deserves</span><br/>
+      A Name.
+    </h1>
+    <p class="hero-sub">
+      No inspiration? No problem. Hit the button and let fate name your next legendary band.
+    </p>
+  </section>
+
+  <!-- Generator Section -->
+  <section class="generator">
+
+    <!-- Result Card -->
+    <div class="result-card <%= generated ? 'visible' : '' %>" id="resultCard">
+      <% if (generated) { %>
+        <div class="result-label">Your band name is</div>
+        <div class="result-name" id="bandName"><%= bandName %></div>
+        <div class="result-sub">Sounds like a #1 hit already 🤘</div>
+      <% } else { %>
+        <div class="result-placeholder">
+          <span>?</span>
+          <p>Your band name will appear here</p>
+        </div>
+      <% } %>
+    </div>
+
+    <!-- Generate Button -->
+    <form action="/generate" method="POST" class="gen-form">
+      <button type="submit" class="btn-generate" id="genBtn">
+        <span class="btn-text">Generate Band Name</span>
+        <span class="btn-icon">⚡</span>
+      </button>
+    </form>
+
+    <% if (generated) { %>
+    <p class="regen-hint">Not feeling it? Hit generate again!</p>
+    <% } %>
+
+  </section>
+
+  <!-- Examples Section -->
+  <section class="examples">
+    <p class="examples-label">Recent generations</p>
+    <div class="examples-grid" id="examplesGrid">
+      <div class="ex-chip">The Crimson Wolves</div>
+      <div class="ex-chip">Neon Phantoms</div>
+      <div class="ex-chip">Lord Acid Ravens</div>
+      <div class="ex-chip">Blazing Titans</div>
+      <div class="ex-chip">Dr. Hollow Thunder</div>
+      <div class="ex-chip">Frozen Outlaws</div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('partials/footer') %>
