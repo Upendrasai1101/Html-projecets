@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secrets App</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="brand">
+      <h1>🔐 Secrets</h1>
+      <p>Login or Register to reveal secrets</p>
+    </div>
+
+    <!-- Error Message -->
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+
+    <!-- Register Form -->
+    <div class="card">
+      <h2>Register</h2>
+      <form action="/register" method="POST">
+        <input type="text" name="username" placeholder="Choose a username" required />
+        <input type="password" name="password" placeholder="Choose a password" required />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <!-- Login Form -->
+    <div class="card">
+      <h2>Login</h2>
+      <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Your username" required />
+        <input type="password" name="password" placeholder="Your password" required />
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>

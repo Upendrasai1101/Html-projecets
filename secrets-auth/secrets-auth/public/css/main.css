@@ -1,0 +1,174 @@
+/* ── RESET ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ── CONTAINER ───────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── BRAND ───────────────────────────────────────────── */
+.brand {
+  text-align: center;
+}
+
+.brand h1 {
+  font-size: 2.2rem;
+  color: #1a1a2e;
+  margin-bottom: 0.3rem;
+}
+
+.brand p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* ── ERROR ───────────────────────────────────────────── */
+.error {
+  background: #ffe0e0;
+  border: 1px solid #f5a5a5;
+  color: #c0392b;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* ── CARD ────────────────────────────────────────────── */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+/* ── FORM ────────────────────────────────────────────── */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+button {
+  width: 100%;
+  padding: 0.85rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, transform 0.15s;
+}
+
+button:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.btn-login {
+  background: #0f766e;
+}
+.btn-login:hover {
+  background: #0d6460;
+}
+
+/* ── SECRET BOX ──────────────────────────────────────── */
+.secret-box {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-left: 4px solid #4f46e5;
+}
+
+.secret-text {
+  font-size: 1.15rem;
+  color: #1a1a2e;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.secret-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: #888;
+}
+
+.score { color: #f59e0b; font-weight: 600; }
+
+/* ── ACTIONS ─────────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-refresh, .btn-logout {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-refresh {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn-logout {
+  background: white;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.btn-refresh:hover, .btn-logout:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
