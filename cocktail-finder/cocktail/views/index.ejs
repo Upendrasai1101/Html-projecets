@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+
+<!-- ── Search Bar ── -->
+<section class="search-section">
+  <form action="/search" method="GET" class="search-form">
+    <input
+      type="text"
+      name="name"
+      placeholder="Search a cocktail... e.g. Margarita"
+      value="<%= searchQuery %>"
+      class="search-input"
+    />
+    <button type="submit" class="search-btn">Search 🔍</button>
+  </form>
+</section>
+
+<!-- ── Error Message ── -->
+<% if (error) { %>
+  <div class="error-box">
+    <p><%= error %></p>
+    <a href="/">← Back to Home</a>
+  </div>
+<% } %>
+
+<!-- ── Cocktail Card (only shows if drink data exists) ── -->
+<% if (drink) { %>
+  <section class="cocktail-section">
+
+    <!-- Left Side: Image -->
+    <div class="cocktail-image-wrap">
+      <img
+        src="<%= drink.strDrinkThumb %>"
+        alt="<%= drink.strDrink %>"
+        class="cocktail-img"
+      />
+      <span class="cocktail-category"><%= drink.strCategory %></span>
+    </div>
+
+    <!-- Right Side: Details -->
+    <div class="cocktail-details">
+
+      <!-- Name & Glass Type -->
+      <h1 class="cocktail-name"><%= drink.strDrink %></h1>
+      <p class="cocktail-glass">🥃 Served in: <strong><%= drink.strGlass %></strong></p>
+
+      <!-- Alcoholic / Non-alcoholic badge -->
+      <span class="badge <%= drink.strAlcoholic === 'Alcoholic' ? 'badge-alcoholic' : 'badge-soft' %>">
+        <%= drink.strAlcoholic %>
+      </span>
+
+      <!-- Ingredients List -->
+      <div class="ingredients-box">
+        <h3>Ingredients</h3>
+        <ul class="ingredients-list">
+          <% ingredients.forEach(function(item) { %>
+            <li>
+              <span class="ing-measure"><%= item.measure %></span>
+              <span class="ing-name"><%= item.name %></span>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+
+      <!-- Instructions -->
+      <div class="instructions-box">
+        <h3>Instructions</h3>
+        <p><%= drink.strInstructions %></p>
+      </div>
+
+      <!-- Random button -->
+      <a href="/random" class="btn-try-another">🎲 Try Another Cocktail</a>
+
+    </div>
+
+  </section>
+<% } %>
+
+<%- include('partials/footer') %>
