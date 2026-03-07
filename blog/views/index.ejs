@@ -1,0 +1,59 @@
+<%- include('partials/header') %>
+
+<main class="main-home">
+
+  <section class="home-hero">
+    <h1 class="home-title">Your Stories,<br/><em>Your Voice.</em></h1>
+    <p class="home-sub">Write freely. Edit anytime. Share your thoughts with the world.</p>
+    <a href="/new" class="btn-primary">Start Writing ✦</a>
+  </section>
+
+  <section class="posts-section">
+    <div class="posts-header">
+      <h2 class="posts-heading">All Posts</h2>
+      <span class="posts-count"><%= posts.length %> <%= posts.length === 1 ? 'post' : 'posts' %></span>
+    </div>
+
+    <% if (posts.length === 0) { %>
+      <div class="empty-state">
+        <div class="empty-icon">📝</div>
+        <h3>No posts yet</h3>
+        <p>Be the first to write something!</p>
+        <a href="/new" class="btn-primary">Create Post</a>
+      </div>
+    <% } else { %>
+      <div class="posts-grid">
+        <% posts.forEach((post, i) => { %>
+          <article class="post-card" style="animation-delay: <%= i * 0.07 %>s">
+            <div class="post-card-top">
+              <span class="post-tag"><%= post.tag %></span>
+              <% if (post.edited) { %><span class="post-edited">edited</span><% } %>
+            </div>
+            <h3 class="post-card-title">
+              <a href="/posts/<%= post.id %>"><%= post.title %></a>
+            </h3>
+            <p class="post-card-excerpt">
+              <%= post.content.length > 140 ? post.content.substring(0, 140) + '…' : post.content %>
+            </p>
+            <div class="post-card-footer">
+              <div class="post-meta">
+                <span class="post-author">by <%= post.author %></span>
+                <span class="post-dot">·</span>
+                <span class="post-date"><%= post.date %></span>
+              </div>
+              <div class="post-actions">
+                <a href="/posts/<%= post.id %>/edit" class="btn-edit" title="Edit">✏️</a>
+                <form action="/posts/<%= post.id %>/delete" method="POST" class="delete-form" onsubmit="return confirmDelete()">
+                  <button type="submit" class="btn-delete" title="Delete">🗑️</button>
+                </form>
+              </div>
+            </div>
+          </article>
+        <% }) %>
+      </div>
+    <% } %>
+  </section>
+
+</main>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,59 @@
+<%- include('partials/header') %>
+
+<main class="main-form">
+  <div class="form-container">
+
+    <a href="/" class="back-link">← Back</a>
+
+    <div class="form-header">
+      <h1>Write a New Post</h1>
+      <p>Share something worth reading.</p>
+    </div>
+
+    <% if (error) { %>
+      <div class="alert-error">⚠ <%= error %></div>
+    <% } %>
+
+    <form action="/posts" method="POST" class="post-form">
+
+      <div class="form-group">
+        <label for="title">Title <span class="required">*</span></label>
+        <input type="text" id="title" name="title" placeholder="Give your post a great title..." required/>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" placeholder="Your name"/>
+        </div>
+        <div class="form-group">
+          <label for="tag">Tag</label>
+          <select id="tag" name="tag">
+            <option value="General">General</option>
+            <option value="Technology">Technology</option>
+            <option value="Travel">Travel</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Food">Food</option>
+            <option value="Health">Health</option>
+            <option value="Opinion">Opinion</option>
+            <option value="Story">Story</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Content <span class="required">*</span></label>
+        <textarea id="content" name="content" rows="12" placeholder="Start writing your story..." required></textarea>
+        <span class="char-count" id="charCount">0 characters</span>
+      </div>
+
+      <div class="form-actions">
+        <a href="/" class="btn-ghost">Cancel</a>
+        <button type="submit" class="btn-primary">Publish Post ✦</button>
+      </div>
+
+    </form>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
