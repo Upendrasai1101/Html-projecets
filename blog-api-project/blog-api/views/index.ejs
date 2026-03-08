@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog API Project</title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+
+<body>
+
+  <!-- ── Header ── -->
+  <header class="header">
+    <h1 class="logo">📝 My Blog</h1>
+    <a href="/new" class="btn-new">+ New Post</a>
+  </header>
+
+  <main class="main">
+
+    <!-- ── Error Message ── -->
+    <% if (error) { %>
+      <div class="error-box">
+        ⚠ <%= error %>
+      </div>
+    <% } %>
+
+    <!-- ── No Posts Message ── -->
+    <% if (posts.length === 0 && !error) { %>
+      <div class="empty-box">
+        <p>No posts yet. Create your first one!</p>
+        <a href="/new" class="btn-new">+ New Post</a>
+      </div>
+    <% } %>
+
+    <!-- ── Posts List ── -->
+    <% posts.forEach(function(post) { %>
+
+      <article class="post-card">
+
+        <!-- Post Header -->
+        <div class="post-header">
+          <span class="post-date"><%= post.date %></span>
+          <span class="post-author">by <%= post.author %></span>
+        </div>
+
+        <!-- Post Title -->
+        <h2 class="post-title"><%= post.title %></h2>
+
+        <!-- Post Content -->
+        <p class="post-content"><%= post.content %></p>
+
+        <!-- Edit & Delete Buttons -->
+        <div class="post-actions">
+          <a href="/edit/<%= post.id %>" class="btn-edit">✏️ Edit</a>
+          <a href="/api/posts/delete/<%= post.id %>"
+             class="btn-delete"
+             onclick="return confirm('Delete this post?')">
+            🗑️ Delete
+          </a>
+        </div>
+
+      </article>
+
+    <% }) %>
+
+  </main>
+
+  <footer class="footer">
+    <p>Blog API Project — Built with Node.js, Express, Axios & EJS</p>
+  </footer>
+
+</body>
+</html>
