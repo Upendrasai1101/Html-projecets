@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DBank — Decentralized Bank</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+
+    <!-- ── Header ──────────────────────────────────────────── -->
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img src="logo.png" alt="DBank Logo" onerror="this.style.display='none'" />
+          <span>DBank</span>
+        </div>
+        <p class="header__tagline">Decentralized Banking on ICP</p>
+      </div>
+    </header>
+
+    <!-- ── Main ────────────────────────────────────────────── -->
+    <main class="main">
+
+      <!-- Balance Card -->
+      <section class="balance-card">
+        <p class="balance-card__label">Current Balance</p>
+        <h1 class="balance-card__amount" id="balance">
+          <span class="balance-card__loading">Loading...</span>
+        </h1>
+        <p class="balance-card__sub">Secured on Internet Computer Blockchain</p>
+      </section>
+
+      <!-- Actions -->
+      <section class="actions">
+
+        <!-- Deposit -->
+        <div class="action-card">
+          <h2 class="action-card__title">💰 Deposit</h2>
+          <p class="action-card__desc">Add funds to your account</p>
+          <form id="deposit-form" class="action-form">
+            <input
+              type="number"
+              id="input-amount"
+              class="action-input"
+              placeholder="Enter amount"
+              min="0.01"
+              step="0.01"
+            />
+            <button type="submit" class="btn btn--deposit">
+              Deposit
+            </button>
+          </form>
+        </div>
+
+        <!-- Withdraw -->
+        <div class="action-card">
+          <h2 class="action-card__title">💸 Withdraw</h2>
+          <p class="action-card__desc">Withdraw funds from your account</p>
+          <form id="withdraw-form" class="action-form">
+            <input
+              type="number"
+              id="withdraw-amount"
+              class="action-input"
+              placeholder="Enter amount"
+              min="0.01"
+              step="0.01"
+            />
+            <button type="submit" class="btn btn--withdraw">
+              Withdraw
+            </button>
+          </form>
+        </div>
+
+      </section>
+
+      <!-- Transaction Status -->
+      <div id="status-msg" class="status-msg"></div>
+
+      <!-- Info Section -->
+      <section class="info-section">
+        <div class="info-card">
+          <span class="info-card__icon">🔗</span>
+          <h3>Blockchain Secured</h3>
+          <p>Your funds are stored on the Internet Computer blockchain — tamper-proof and always available.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card__icon">📈</span>
+          <h3>Auto Compound</h3>
+          <p>Interest compounds automatically every time you interact with the bank.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card__icon">⚡</span>
+          <h3>Instant Transactions</h3>
+          <p>Deposits and withdrawals are processed instantly on-chain with no middlemen.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer class="footer">
+      <p>© <span id="year"></span> DBank — Built on Internet Computer Protocol</p>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
