@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "dChat": {
+      "main": "src/dChat/main.mo",
+      "type": "motoko"
+    },
+    "dChat_assets": {
+      "dependencies": ["dChat"],
+      "frontend": {
+        "entrypoint": "src/dChat_assets/src/index.html"
+      },
+      "source": ["src/dChat_assets/assets", "dist/dChat_assets/"],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8080",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

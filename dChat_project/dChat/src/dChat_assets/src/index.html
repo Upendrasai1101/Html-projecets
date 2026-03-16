@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dChat — Decentralized Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+
+    <!-- ── Header ──────────────────────────────────────────── -->
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <span class="header__logo-icon">💬</span>
+          <span>dChat</span>
+        </div>
+        <div class="header__meta">
+          <span class="header__badge">⛓️ On-Chain</span>
+          <span class="header__count" id="msg-count">0 messages</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Main ────────────────────────────────────────────── -->
+    <main class="main">
+
+      <!-- Username Setup -->
+      <div class="username-bar" id="username-bar">
+        <span class="username-bar__label">👤 Your Name:</span>
+        <input
+          type="text"
+          id="username-input"
+          class="username-input"
+          placeholder="Enter your username..."
+          maxlength="20"
+        />
+        <button class="btn btn--set" id="set-username-btn">Set Name</button>
+      </div>
+
+      <!-- Active User Display -->
+      <div class="active-user" id="active-user" style="display:none;">
+        <span>👤 Chatting as: </span>
+        <span class="active-user__name" id="active-username"></span>
+        <button class="btn btn--change" id="change-username-btn">Change</button>
+      </div>
+
+      <!-- Chat Window -->
+      <div class="chat-window" id="chat-window">
+        <div class="chat-loading" id="chat-loading">
+          <div class="spinner"></div>
+          <p>Loading messages from blockchain...</p>
+        </div>
+        <div class="messages" id="messages"></div>
+      </div>
+
+      <!-- Message Input -->
+      <div class="message-input-area">
+        <form id="message-form" class="message-form">
+          <input
+            type="text"
+            id="message-input"
+            class="message-input"
+            placeholder="Type a message..."
+            maxlength="200"
+            disabled
+          />
+          <button type="submit" class="btn btn--send" id="send-btn" disabled>
+            Send 🚀
+          </button>
+        </form>
+        <p class="input-hint" id="input-hint">Set your username to start chatting!</p>
+      </div>
+
+    </main>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer class="footer">
+      <p>💬 dChat — Decentralized messaging on <strong>Internet Computer</strong></p>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
