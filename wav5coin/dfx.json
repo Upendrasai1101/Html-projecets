@@ -1,0 +1,9 @@
+{
+  "canisters": {
+    "wav5coin_backend": {
+      "type": "motoko",
+      "main": "src/wav5coin_backend/main.mo"
+    }
+  },
+  "version": 1
+}
