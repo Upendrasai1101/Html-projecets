@@ -1,0 +1,5 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#0a0e1a;color:#e2e8f0;overflow-x:hidden;}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:#0a0e1a;}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#f59e0b,#d97706);border-radius:10px;}

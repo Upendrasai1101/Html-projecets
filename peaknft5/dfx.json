@@ -1,0 +1,9 @@
+{
+  "canisters": {
+    "peaknft5_backend": {
+      "type": "motoko",
+      "main": "src/peaknft5_backend/main.mo"
+    }
+  },
+  "version": 1
+}
