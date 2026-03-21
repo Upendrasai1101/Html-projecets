@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simon Game</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <div class="title">SIMON</div>
+  <div class="subtitle">MEMORY SEQUENCE GAME</div>
+
+  <div class="round-bar">
+    <div class="stat">
+      <span class="stat-label">ROUND</span>
+      <span class="stat-value" id="disp-round">--</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">BEST</span>
+      <span class="stat-value" id="disp-best">0</span>
+    </div>
+  </div>
+
+  <div class="board-wrap">
+    <div class="board">
+      <div class="pad" id="pad-green"  data-color="green"></div>
+      <div class="pad" id="pad-red"    data-color="red"></div>
+      <div class="pad" id="pad-yellow" data-color="yellow"></div>
+      <div class="pad" id="pad-blue"   data-color="blue"></div>
+    </div>
+    <div class="center">
+      <!-- REQUIREMENT 1: START THE GAME -->
+      <button id="btn-start">▶ START</button>
+      <!-- REQUIREMENT 4: RESTART (shown after game over) -->
+      <button id="btn-restart">↺ RESTART</button>
+    </div>
+  </div>
+
+  <!-- REQUIREMENT 2: Status + dots show answer-checking in real time -->
+  <div class="status-area">
+    <div id="status-msg">PRESS START TO PLAY</div>
+    <div id="progress-dots"></div>
+  </div>
+
+  <!-- REQUIREMENT 3: GAME OVER OVERLAY -->
+  <div id="overlay-gameover">
+    <div class="go-emoji">💀</div>
+    <div class="go-title">GAME OVER</div>
+    <div class="go-info">
+      YOU REACHED ROUND <strong id="go-round">0</strong><br>
+      BEST SCORE: <strong id="go-best">0</strong> ROUNDS
+    </div>
+    <!-- REQUIREMENT 4: RESTART THE GAME -->
+    <button id="btn-play-again">↺ PLAY AGAIN</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
