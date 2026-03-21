@@ -1,5 +1,5 @@
 🚀 Full-Stack Web Development & Web3 Portfolio
-Welcome to my comprehensive project showcase! This repository features a collection of 35+ deployments ranging from core JavaScript logic to advanced decentralized applications (dApps) on the Internet Computer (ICP).
+Welcome to my comprehensive project showcase! This repository features a collection of 15+ deployments ranging from core JavaScript logic to advanced decentralized applications (dApps) on the Internet Computer (ICP).
 
 🌟 Featured Web3 & Blockchain Projects (Latest Versions)
 PeakNFT5: My most advanced NFT Marketplace. Supports secure minting, digital collection management, and decentralized asset discovery.
